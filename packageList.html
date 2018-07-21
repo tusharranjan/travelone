@@ -1,0 +1,587 @@
+<html>
+    <head>
+		<title>CMS DEMO</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
+	<link href="css/main.css" rel="stylesheet">
+
+
+	<!-- CSS Custom -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/list-page.css" rel="stylesheet">
+    
+	
+	<!-- Add your style -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    </head>
+    <body>
+<!-- enquery popup -->
+<div class="pop_advsearch" id="frmDefaultClientEnquiry">
+		<div class="pop_cmn_head">
+			<h1>Quick Enquiry</h1><span class="close-icons"><i class="fa fa-close"></i></span>
+		
+			<div class="q_enq_form" id="show_hide">
+				<div class="row daterow_new">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="First Name" class="form-control" id="txtFName" name="txtFName" maxlength="25">
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="Last Name" class="form-control" id="txtLName" name="txtLName" maxlength="25">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="Phone Number" name="txtContact" id="txtContact" maxlength="10" onkeypress="return isNumberKey(event)" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="Email" name="txtEmail" id="txtEmail" maxlength="50" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" class="form-control" id="txtadd" name="txtadd" placeholder="Enter Address" maxlength="500">
+							
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+						<select name="quickContact$ddlCustomerCountry" id="quickContact_ddlCustomerCountry" class="form-control">
+							<option>-Select country -</option>
+						</select>
+							<!--<input type="text" class="form-control" id="txtDestination" name="Destination" placeholder="Destination">-->
+							
+						</div>
+					</div>
+				</div>
+			   
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<textarea placeholder="More Details" name="txtMoreDetails" id="txtMoreDetails" cols="" rows="" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-5">
+						<label class="font_normal radio-inline">
+							<input type="radio" name="EmailMe" id="EmailMe" value="Email Me" checked="checked" class="set_radio_btn" onclick="IsMail();">Email Me</label>
+					</div>
+					<div class="col-xs-5">
+						<div class="form-group">
+							<label class="font_normal radio-inline">
+								<input type="radio" name="CallMe" id="CallMe" value="Call Me" class="set_radio_btn" onclick="IsCall();">Call Me</label>
+						</div>
+					</div>
+					<input type="hidden" id="hdnCallType" name="hdnCallType" value="MAIL">
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-7">
+						<input name="quickContact$txtcaptchaBook" type="text" id="quickContact_txtcaptchaBook" class="form-control input-sm" placeholder="Security Code">
+					</div>
+					<div class="col-xs-5">
+						<img id="quickContact_imgCaptchBook" src="" style="height:25px;border-width: 0px">
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<input type="button" id="btnQuickContact" value="Submit" class="btn-block btn btn-info" style="margin-top: 5px;">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+<!-- end of enquery popup -->
+
+        <!-- start Container Wrapper -->
+	
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+		
+		<header id="header">
+
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-default">
+
+				<div class="topnav_wrapper">
+					<div class="logoleft-container">
+						<ul>
+							<li><a href="javascript:void(0)">Home</a></li>
+							<li><a href="javascript:void(0)">About Us</a></li>
+							<li><a href="javascript:void(0)">My Account</a></li>
+
+						</ul>
+					</div>
+					
+					<div class="top-rightcontainer">
+						<div class="loginnw">
+						
+						</div>
+						<div class="call"><span class="ph_icons"><i class="fa fa-phone"></i>18001020810</span> </div>
+						<div class="call"><span class="mail_icons"><i class="fa fa-envelope"></i>info@demotravel.com</span></div>
+					</div>
+				
+
+					<div class="nav-mini-wrapper">
+						<ul class="nav-mini">
+							<li><a data-toggle="modal" href="index.html#registerModal"><i class="icon-user-follow" data-toggle="tooltip" data-placement="bottom" title="sign up"></i></a></li>
+							<li><a data-toggle="modal" href="index.html#loginModal"><i class="icon-login" data-toggle="tooltip" data-placement="bottom" title="login"></i> </a></li>
+						</ul>
+					</div>
+				
+				</div>
+				<div id="navbar" class="navbar-nav-wrapper">
+						<div class="logo-wrapper">
+								<div class="logo">
+									<a href="index.html">MACO CMS DEMO</a>
+								</div>
+							</div>
+					<ul class="nav navbar-nav" id="responsive-menu">
+					
+						<li>
+							<a href="javascript:void(0)">Destination</a><span class="downicons"><i class="fa fa-angle-down"></i></span>
+							<ul>
+								<li><a href="javascript:void(0)">International</a></li>
+								<li><a href="javascript:void(0)">Domestic</a></li>
+								
+							</ul>
+						</li>
+						
+						<li>
+							<a href="javascript:void(0)">Themes</a><span class="downicons"><i class="fa fa-angle-down"></i></span>
+							<ul>
+								<li>
+									<a href="javascript:void(0)">weekend Special</a>
+									</li>
+									<li><a href="javascript:void(0)">Honeymoon special</a></li>
+									
+																
+							</ul>
+						</li>
+						
+						<li>
+							<a href="javascript:void(0)">Requested Tour</a><span class="downicons"><i class="fa fa-angle-down"></i></span>
+							<ul>
+								<li><a href="javascript:void(0)">Beaches</a></li>
+								<li><a href="javascript:void(0)">Hill Station</a></li>
+								<li><a href="javascript:void(0)">Wild Life</a></li>
+																
+							</ul>
+						</li>
+						<li><a href="javascript:void(0)">Contact Us</a></li>
+						<li><a href="javascript:void(0)">Blog</a></li>
+						<li><a href="javascript:void(0)" id="enq_nwlist">Enqurty Now</a><span class="enq_img"><i class="fa fa-comments-o bottomi"></i></span></li>
+					</ul>
+			
+				</div><!--/.nav-collapse -->
+				<div id="slicknav-mobile"></div>
+				
+			</nav>
+			<!-- end Navbar (Header) -->
+
+		</header>
+        <div class="list_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                            <div class="sidebar">
+                                <div class="border-box">
+                                    <div class="box-title">Tour Search</div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search Site">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-box">
+                                    <div class="box-title">Price Range</div>
+                                    <div class="price-widget">
+                                            
+                                            <input type="text" id="amount" readonly style="border:0; color:#4b0655; font-weight:bold;">
+                                            <div id="slider-range"></div>
+                                    </div>
+								</div>
+								
+								<div class="border-box">
+                                    <div class="box-title">Duration</div>
+                                    <div class="price-widget">
+                                            
+										
+										<input type="text" id="duration" readonly style="border:0; color:#4b0655; font-weight:bold;">
+										<div id="duration_slider"></div>
+                                    </div>
+                                </div>
+                            
+                                <div class="border-box">
+                                    <div class="box-title">Category</div>
+                                    <label class="custom-check">
+                                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-1">Hill Station</label>
+                                    </label>
+                                    <label class="custom-check">
+                                            <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-2">Weekend Specials</label>
+                                    </label>
+                                    <label class="custom-check">
+                                            <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-3">Women Specials</label>
+                                    </label>
+                                    <label class="custom-check">
+                                            <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value1">
+                                            <label for="styled-checkbox-4">Honeymoon Specials</label>
+                                    </label>
+                                </div>
+                                                        
+                            </div>
+                    </div>
+    
+                    <div class="col-sm-8">
+                        <div class="sort-wrap">
+                            <div class="sort-title">20 Matching Result</div>
+                            <div class="toogle-view">
+                               <span id="list_view" class="list"><i class="fa fa-list"></i></span>
+                               <span id="gride_view" class="list active_list"><i class="fa fa-th-large"></i></span>
+                            </div>
+                        </div>
+                        <div class="row item switchcontainer">
+    
+                            <div class="grid_wrapper">
+                                <div class="item-grid">
+                                    <div class="item-img">
+                                        <img src="images/trip/01.jpg">
+                                        <div class="item-overlay">
+                                            <a href="javascript:volid(0)"><span class="icon-binocular"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="item-desc">
+                                        <div class="item-info">
+                                            <span class="icon-hard"></span>
+                                            <h4 class="title"><a href="">Routeburn Track</a></h4>
+                                        </div>
+    
+                                        <div class="sub-title">
+                                            <span class="location">New Zealand</span>
+                                            <div class="dis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nisi ad, incidunt, magnam veaiores quibusdam</div>
+                                        </div>
+    
+                                        <div class="item-detail">
+                                            <div class="left">
+                                                <div class="day"><span class="icon-sun"><i class="fa fa-sun-o"></i></span>3 Days</div>
+                                                <div class="night"><span class="icon-moon"><i class="fa fa-moon-o"></i></span>2 Nights</div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="price"><span class="icons_cur"><i class="fa fa-inr"></i></span>1200</div>
+                                                <a href="details.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid_wrapper">
+                                    <div class="item-grid">
+                                        <div class="item-img">
+                                            <img src="images/trip/01.jpg">
+                                            <div class="item-overlay">
+                                                <a href="javascript:volid(0)"><span class="icon-binocular"></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="item-desc">
+                                            <div class="item-info">
+                                                <span class="icon-hard"></span>
+                                                <h4 class="title"><a href="">Routeburn Track</a></h4>
+                                            </div>
+        
+                                            <div class="sub-title">
+												<span class="location">New Zealand</span>
+												<div class="dis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nisi ad, incidunt, magnam veaiores quibusdam</div>
+                                               
+                                            </div>
+        
+                                            <div class="item-detail">
+                                                <div class="left">
+                                                    <div class="day"><span class="icon-sun"><i class="fa fa-sun-o"></i></span>3 Days</div>
+                                                    <div class="night"><span class="icon-moon"><i class="fa fa-moon-o"></i></span>2 Nights</div>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="price"><span class="icons_cur"><i class="fa fa-inr"></i></span>1200</div>
+                                                    <a href="details.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="grid_wrapper">
+                                        <div class="item-grid">
+                                            <div class="item-img">
+                                                <img src="images/trip/02.jpg">
+                                                <div class="item-overlay">
+                                                    <a href="javascript:volid(0)"><span class="icon-binocular"></span></a>
+                                                </div>
+                                            </div>
+                                            <div class="item-desc">
+                                                <div class="item-info">
+                                                    <span class="icon-hard"></span>
+                                                    <h4 class="title"><a href="">Routeburn Track</a></h4>
+                                                </div>
+            
+                                                <div class="sub-title">
+													<span class="location">New Zealand</span>
+													<div class="dis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nisi ad, incidunt, magnam veaiores quibusdam</div>
+                                                    
+                                                </div>
+            
+                                                <div class="item-detail">
+                                                    <div class="left">
+                                                        <div class="day"><span class="icon-sun"><i class="fa fa-sun-o"></i></span>3 Days</div>
+                                                        <div class="night"><span class="icon-moon"><i class="fa fa-moon-o"></i></span>2 Nights</div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="price"><span class="icons_cur"><i class="fa fa-inr"></i></span>1200</div>
+                                                        <a href="details.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="grid_wrapper">
+                                            <div class="item-grid">
+                                                <div class="item-img">
+                                                    <img src="images/trip/01.jpg">
+                                                    <div class="item-overlay">
+                                                        <a href="javascript:volid(0)"><span class="icon-binocular"></span></a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-desc">
+                                                    <div class="item-info">
+                                                        <span class="icon-hard"></span>
+                                                        <h4 class="title"><a href="">Routeburn Track</a></h4>
+                                                    </div>
+                
+                                                    <div class="sub-title">
+														<span class="location">New Zealand</span>
+														<div class="dis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nisi ad, incidunt, magnam veaiores quibusdam</div>
+                                                        
+                                                    </div>
+                
+                                                    <div class="item-detail">
+                                                        <div class="left">
+                                                            <div class="day"><span class="icon-sun"><i class="fa fa-sun-o"></i></span>3 Days</div>
+                                                            <div class="night"><span class="icon-moon"><i class="fa fa-moon-o"></i></span>2 Nights</div>
+                                                        </div>
+                                                        <div class="right">
+                                                            <div class="price"><span class="icons_cur"><i class="fa fa-inr"></i></span>1200</div>
+                                                            <a href="details.html" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                         
+    
+                        </div>	
+      
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+		</div>
+		
+		<!-- end Main Wrapper -->
+		
+		<!-- start Footer Wrapper -->
+		
+		<div class="footer-wrapper scrollspy-footer">
+		
+			<footer class="main-footer">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-sm-12 col-md-4">
+						
+							<h5 class="footer-title">newsletter</h5>
+							
+							<p class="font16">Subsribe to get our latest updates and oeffers</p>
+							
+							<div class="footer-newsletter">
+								
+								<div class="form-group">
+									<input class="form-control" placeholder="enter your email " />
+									<button class="btn btn-primary">subsribe</button>
+								</div>
+								
+								<p class="font-italic font13">*** Don't worry, we wont spam you!</p>
+							
+							</div>
+
+						</div>
+						
+						<div class="col-sm-12 col-md-8">
+						
+							<div class="row">
+								
+								<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-3 mt-25-sm">
+									<h5 class="footer-title">footer</h5>
+									<ul class="footer-menu">
+										<li><a href="index.html#">Support</a></li>
+										<li><a href="index.html#">Advertise</a></li>
+										<li><a href="index.html#">Media Relations</a></li>
+										<li><a href="index.html#">Affiliates</a></li>
+										<li><a href="index.html#">Careers</a></li>
+									</ul>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-3 mt-25-sm">
+									<h5 class="footer-title">quick  links</h5>
+									<ul class="footer-menu">
+										<li><a href="index.html#">Media Relations</a></li>
+										<li><a href="index.html#">Affiliates</a></li>
+										<li><a href="index.html#">Careers</a></li>
+										<li><a href="index.html#">Support</a></li>
+										<li><a href="index.html#">Advertise</a></li>
+									</ul>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-3 mt-25-sm">
+								
+									<h5 class="footer-title">helps</h5>
+									<ul class="footer-menu">
+										<li><a href="index.html#">Using a Tour</a></li>
+										<li><a href="index.html#">Submitting a Tour</a></li>
+										<li><a href="index.html#">Managing My Account</a></li>
+										<li><a href="index.html#">Merchant Help</a></li>
+										<li><a href="index.html#">White Label Website</a></li>
+									</ul>
+								
+								</div>
+
+							</div>
+
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</footer>
+			
+			<footer class="bottom-footer">
+			
+				<div class="container">
+				
+					<div class="row">
+					
+						<div class="col-xs-12 col-sm-6 col-md-4">
+				
+							<p class="copy-right">&#169; 2018 Maco Travel </p>
+							
+						</div>
+						
+						<div class="col-xs-12 col-sm-6 col-md-4">
+						
+							<ul class="bottom-footer-menu">
+								<li><a href="index.html#">Cookies</a></li>
+								<li><a href="index.html#">Policies</a></li>
+								<li><a href="index.html#">Terms</a></li>
+								<li><a href="index.html#">Blogs</a></li>
+							</ul>
+						
+						</div>
+						
+						<div class="col-xs-12 col-sm-12 col-md-4">
+							<ul class="bottom-footer-menu for-social">
+								<li><a href="index.html#"><i class="icon-social-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
+								<li><a href="index.html#"><i class="icon-social-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
+								<li><a href="index.html#"><i class="icon-social-google" data-toggle="tooltip" data-placement="top" title="google plus"></i></a></li>
+								<li><a href="index.html#"><i class="icon-social-instagram" data-toggle="tooltip" data-placement="top" title="instrgram"></i></a></li>
+							</ul>
+						</div>
+					
+					</div>
+
+				</div>
+				
+			
+			</footer>
+			
+		</div>
+		
+		<!-- end Footer Wrapper -->
+		
+	</div> 
+	
+    <!-- end Container Wrapper -->
+    <!-- Core JS -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/core-plugins.js"></script>
+<script type="text/javascript" src="js/customs.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- Only in Home Page -->
+<script type="text/javascript" src="js/jquery.flexdatalist.js"></script>
+<script>
+        $( function() {
+          $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 25, 300 ],
+            slide: function( event, ui ) {
+              $( "#amount" ).val( "Rs " + ui.values[ 0 ] + " - Rs " + ui.values[ 1 ] );
+            }
+          });
+          $( "#amount" ).val( "Rs " + $( "#slider-range" ).slider( "values", 0 ) +
+            " - Rs " + $( "#slider-range" ).slider( "values", 1 ) );
+        } );
+
+			$( function() {
+		  $( "#duration_slider" ).slider({
+			range: true,
+			min: 1,
+			max: 10,
+			values: [ 1, 9],
+			slide: function( event, ui ) {
+			  $( "#duration" ).val( "" + ui.values[ 0 ] + " -  " + ui.values[ 1 ] );
+			}
+		  });
+		  $( "#duration" ).val( " " + $( "#duration_slider" ).slider( "values", 0 ) +
+			" -  " + $( "#slider-range" ).slider( "values", 1 ) );
+		} );
+		</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  $('#list_view').on('click',function(){
+		  $('.switchcontainer>div').removeClass('grid_wrapper').addClass('list_wrappernw');
+		  $('.toogle-view .list').removeClass('active_list');
+		  $(this).addClass('active_list');
+	  })
+	  $('#gride_view').on('click',function(){
+		  $('.switchcontainer>div').removeClass('list_wrappernw').addClass('grid_wrapper');
+		  $('.toogle-view .list').removeClass('active_list');
+		  $(this).addClass('active_list');
+	  })
+  })
+</script>
+    </body>
+</html>

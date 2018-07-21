@@ -1,0 +1,37 @@
+
+/*------------------------------------------------------------------
+* Project:        Togoby
+* Author:         Crenoveative
+* URL:            http://crenoveative.com or https://themeforest.net/user/crenoveative/portfolio
+* Created:        08/03/2017
+-------------------------------------------------------------------*/
+
+
+/**
+ * Add your style here
+ */
+/* home page css */
+ .transparent-header .wrapper, .transparent-header .container-wrapper {
+    padding-top: 0;
+}
+.top_bannertxt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+}
+.top-grid {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+.top-grid img{margin: auto;}
+
+/* end  home page css */
+
+
+
+
+
+

@@ -1,0 +1,848 @@
+<html>
+
+<head>
+	<title>CMS DEMO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/plugin.css" rel="stylesheet">
+
+	<!-- CSS Custom -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- Add your style -->
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/detailspage.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- enquery popup -->
+	<div class="pop_advsearch" id="frmDefaultClientEnquiry">
+		<div class="pop_cmn_head">
+			<h1>Quick Enquiry</h1>
+			<span class="close-icons">
+				<i class="fa fa-close"></i>
+			</span>
+
+			<div class="q_enq_form" id="show_hide">
+				<div class="row daterow_new">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="First Name" class="form-control" id="txtFName" name="txtFName" maxlength="25">
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<input type="text" placeholder="Last Name" class="form-control" id="txtLName" name="txtLName" maxlength="25">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="Phone Number" name="txtContact" id="txtContact" maxlength="10" onkeypress="return isNumberKey(event)"
+							 class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" placeholder="Email" name="txtEmail" id="txtEmail" maxlength="50" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<input type="text" class="form-control" id="txtadd" name="txtadd" placeholder="Enter Address" maxlength="500">
+
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<select name="quickContact$ddlCustomerCountry" id="quickContact_ddlCustomerCountry" class="form-control">
+								<option>-Select country -</option>
+							</select>
+							<!--<input type="text" class="form-control" id="txtDestination" name="Destination" placeholder="Destination">-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<textarea placeholder="More Details" name="txtMoreDetails" id="txtMoreDetails" cols="" rows="" class="form-control"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-5">
+						<label class="font_normal radio-inline">
+							<input type="radio" name="EmailMe" id="EmailMe" value="Email Me" checked="checked" class="set_radio_btn" onclick="IsMail();">Email Me</label>
+					</div>
+					<div class="col-xs-5">
+						<div class="form-group">
+							<label class="font_normal radio-inline">
+								<input type="radio" name="CallMe" id="CallMe" value="Call Me" class="set_radio_btn" onclick="IsCall();">Call Me</label>
+						</div>
+					</div>
+					<input type="hidden" id="hdnCallType" name="hdnCallType" value="MAIL">
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-7">
+						<input name="quickContact$txtcaptchaBook" type="text" id="quickContact_txtcaptchaBook" class="form-control input-sm" placeholder="Security Code">
+					</div>
+					<div class="col-xs-5">
+						<img id="quickContact_imgCaptchBook" src="" style="height:25px;border-width: 0px">
+					</div>
+				</div>
+				<div class="row daterow_new">
+					<div class="col-xs-12">
+						<input type="button" id="btnQuickContact" value="Submit" class="btn-block btn btn-info" style="margin-top: 5px;">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of enquery popup -->
+
+	<!-- start Container Wrapper -->
+
+	<div class="container-wrapper">
+
+		<!-- start Header -->
+
+		<header id="header">
+
+			<!-- start Navbar (Header) -->
+			<nav class="navbar navbar-default">
+
+				<div class="topnav_wrapper">
+					<div class="logoleft-container">
+						<ul>
+							<li>
+								<a href="javascript:void(0)">Home</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">About Us</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">My Account</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<div class="top-rightcontainer">
+						<div class="loginnw">
+
+						</div>
+						<div class="call">
+							<span class="ph_icons">
+								<i class="fa fa-phone"></i>18001020810</span>
+						</div>
+						<div class="call">
+							<span class="mail_icons">
+								<i class="fa fa-envelope"></i>info@demotravel.com</span>
+						</div>
+					</div>
+
+
+					<div class="nav-mini-wrapper">
+						<ul class="nav-mini">
+							<li>
+								<a data-toggle="modal" href="index.html#registerModal">
+									<i class="icon-user-follow" data-toggle="tooltip" data-placement="bottom" title="sign up"></i>
+								</a>
+							</li>
+							<li>
+								<a data-toggle="modal" href="index.html#loginModal">
+									<i class="icon-login" data-toggle="tooltip" data-placement="bottom" title="login"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div id="navbar" class="navbar-nav-wrapper">
+					<div class="logo-wrapper">
+						<div class="logo">
+							<a href="index.html">MACO CMS DEMO</a>
+						</div>
+					</div>
+					<ul class="nav navbar-nav" id="responsive-menu">
+
+						<li>
+							<a href="javascript:void(0)">Destination</a>
+							<span class="downicons">
+								<i class="fa fa-angle-down"></i>
+							</span>
+							<ul>
+								<li>
+									<a href="javascript:void(0)">International</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">Domestic</a>
+								</li>
+
+							</ul>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">Themes</a>
+							<span class="downicons">
+								<i class="fa fa-angle-down"></i>
+							</span>
+							<ul>
+								<li>
+									<a href="javascript:void(0)">weekend Special</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">Honeymoon special</a>
+								</li>
+
+
+							</ul>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">Requested Tour</a>
+							<span class="downicons">
+								<i class="fa fa-angle-down"></i>
+							</span>
+							<ul>
+								<li>
+									<a href="javascript:void(0)">Beaches</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">Hill Station</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">Wild Life</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)">Contact Us</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">Blog</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" id="enq_nwlist">Enqurty Now</a>
+							<span class="enq_img">
+								<i class="fa fa-comments-o bottomi"></i>
+							</span>
+						</li>
+					</ul>
+
+				</div>
+				<!--/.nav-collapse -->
+				<div id="slicknav-mobile"></div>
+
+			</nav>
+			<!-- end Navbar (Header) -->
+
+		</header>
+
+		<!-- end Header -->
+
+		<!-- start details wrapper -->
+		<section class="wrapper">
+			<div class="divider_border"></div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab_1" data-toggle="tab">Overview</a>
+							</li>
+							<li>
+								<a href="#tab_4" data-toggle="tab">Itinanary</a>
+							</li>
+							<li>
+								<a href="#tab_2" data-toggle="tab">INCLUSIONS/EXCLUSION</a>
+							</li>
+							<li>
+								<a href="#tab_6" data-toggle="tab">Tour Cost</a>
+							</li>
+							<li>
+								<a href="#tab_7" data-toggle="tab">Print</a>
+							</li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="tab_1">
+
+								<p> Nec magna primis labores ex, vim cu mazim vocent. Ius modus posse invenire ei, corpora detraxit pro an, malis dolores
+									ut has. Nam ut elit ferri patrioque, zril partem principes cum id. Sea ne assum minim quaestio, at hinc saepe graeco
+									qui. In nec ludus repudiare scribentur, vix agam fabellas ne. Sit dicta aliquid ornatus an, sea laoreet pericula
+									ea. Invenire voluptatum in pro, vel enim latine ne, percipit convenire eu eam.
+								</p>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="feature-box">
+											<div class="feature-box-icon">
+												<i class="icon-ok-4"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4>Invenire voluptatum</h4>
+												<p>
+													Lorem ipsum dolor sit amet, ei per elitr persecuti adipiscing, ne discere temporibus nam.
+												</p>
+											</div>
+										</div>
+										<div class="feature-box">
+											<div class="feature-box-icon">
+												<i class="icon-ok-4"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4>Nec ludus repudiare</h4>
+												<p>
+													Lorem ipsum dolor sit amet, ei per elitr persecuti adipiscing, ne discere temporibus nam.
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- End col -->
+
+									<div class="col-md-6">
+										<div class="feature-box">
+											<div class="feature-box-icon">
+												<i class="icon-ok-4"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4>Vix agam fabellas</h4>
+												<p>
+													Lorem ipsum dolor sit amet, ei per elitr persecuti adipiscing, ne discere temporibus nam.
+												</p>
+											</div>
+										</div>
+										<div class="feature-box">
+											<div class="feature-box-icon">
+												<i class="icon-ok-4"></i>
+											</div>
+											<div class="feature-box-info">
+												<h4>Sea laoreet pericula</h4>
+												<p>
+													Lorem ipsum dolor sit amet, ei per elitr persecuti adipiscing, ne discere temporibus nam.
+												</p>
+											</div>
+										</div>
+									</div>
+									<!-- End col -->
+								</div>
+								<!-- End row -->
+
+								<hr>
+
+
+
+
+							</div>
+							<!-- End tab_1 -->
+
+							<div class="tab-pane fade" id="tab_2">
+					
+								<div id="summary_review">
+									<div class="inclustion">
+										<div class="tab_tittle">INCLUSIONS</div>
+										<ul>
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Pick-up from Near Airport / Railway station by A/c Indigo</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Accommodation for 2 Pax.</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Room with Breakfast</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Dedicated Cab for entire trip!</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Drop to Near Airport / Railway station!</li>
+										</ul>
+
+										<div class="tab_tittle">EXCLUSION</div>
+										<ul>
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Expenses of personal nature such as tips, telephone calls, laundry, liquor etc.</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Any other item not specified in 'cost includes'.</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Guide &#38; Entrance fees during sightseeing</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Air fare / train fare</li>
+
+											<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Service Tax 2.58% Extra If Required Bill for claim LTA</li>
+										</ul>
+									</div>
+								
+								</div>
+
+
+							</div>
+							<!-- End tab_2 -->
+
+							<div class="tab-pane fade" id="tab_3">
+								<div id="map"></div>
+								<!-- end map-->
+
+								<div class="box_map">
+									<i class="icon_set_1_icon-25"></i>
+									<h4>By Train/tube</h4>
+									<p>Per cu esse assentior delicatissimi, qui adipiscing dissentiunt mediocritatem in, dicat voluptaria no eam. No est
+										alia eloquentiam. Has rebum vulputate adversarium no. Pro cibo delenit scripserit id.</p>
+								</div>
+
+
+								<div class="box_map">
+									<i class="icon_set_1_icon-26"></i>
+									<h4>By bus</h4>
+									<p>Per cu esse assentior delicatissimi, qui adipiscing dissentiunt mediocritatem in, dicat voluptaria no eam. No est
+										alia eloquentiam. Has rebum vulputate adversarium no. Pro cibo delenit scripserit id.</p>
+								</div>
+
+								<div class="box_map">
+									<i class="icon_set_1_icon-21"></i>
+									<h4>By Taxi/cabs</h4>
+									<p>Per cu esse assentior delicatissimi, qui adipiscing dissentiunt mediocritatem in, dicat voluptaria no eam. No est
+										alia eloquentiam. Has rebum vulputate adversarium no. Pro cibo delenit scripserit id.</p>
+								</div>
+
+							</div>
+							<!-- End tab_3 -->
+
+							<!-- tab 4 -->
+							<div class="tab-pane fade" id="tab_4">
+								<p>
+									Iudico omnesque vis at, ius an laboramus adversarium. An eirmod doctus admodum est, vero numquam et mel, an duo modo error.
+									No affert timeam mea, legimus ceteros his in. Aperiri honestatis sit at. Eos aeque fuisset ei, case denique eam
+									ne. Augue invidunt has ad, ullum debitis mea ei, ne aliquip dignissim nec.
+								</p>
+								<ul class="cbp_tmtimeline">
+									<li>
+
+										<div class="cbp_tmicon">
+											1
+										</div>
+										<div class="cbp_tmlabel">
+
+											<h4>Lorem Ipsum</h4>
+											<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+												at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+												opposed to using 'Content here, content here', making it look like readable English.
+											</p>
+										</div>
+									</li>
+									<li>
+
+										<div class="cbp_tmicon">
+											2
+										</div>
+										<div class="cbp_tmlabel">
+
+											<h4>Lorem Ipsum</h4>
+											<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+												at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+												opposed to using 'Content here, content here', making it look like readable English.
+											</p>
+										</div>
+									</li>
+									<li>
+
+										<div class="cbp_tmicon">
+											3
+										</div>
+										<div class="cbp_tmlabel">
+
+											<h4>Lorem Ipsum</h4>
+											<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+												at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+												opposed to using 'Content here, content here', making it look like readable English.
+											</p>
+										</div>
+									</li>
+									<li>
+
+										<div class="cbp_tmicon">
+											4
+										</div>
+										<div class="cbp_tmlabel">
+
+											<h4>Lorem Ipsum</h4>
+											<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+												at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+												opposed to using 'Content here, content here', making it look like readable English.
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- end of tab4 -->
+							<div id="tab_6" class="tab-pane fade">
+								<div class="cost_tourcontainer">
+									<div class="col-sm-4">
+										<div class="tour_pkg">
+											<div class="pkg_title"><h4>Standard</h4></div>
+											<ul>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Hotel<span class="fea_pkg">3 star</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Single Occupancy<span class="fea_pkg">2</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Twin Sharing<span class="fea_pkg">2</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Triple Sharing<span class="fea_pkg">4</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child with bed<span class="fea_pkg">5</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child without bed<span class="fea_pkg">6</span></li>
+												<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Infant<span class="fea_pkg">0</span></li>
+												
+											</ul>
+										</div>
+									</div>
+
+									<div class="col-sm-4">
+											<div class="tour_pkg">
+												<div class="pkg_title"><h4>Delux</h4></div>
+												<ul>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Hotel<span class="fea_pkg">3 star</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Single Occupancy<span class="fea_pkg">2</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Twin Sharing<span class="fea_pkg">2</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Triple Sharing<span class="fea_pkg">4</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child with bed<span class="fea_pkg">5</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child without bed<span class="fea_pkg">6</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Infant<span class="fea_pkg">0</span></li>
+													
+												</ul>
+											</div>
+									</div>
+
+									<div class="col-sm-4">
+											<div class="tour_pkg">
+												<div class="pkg_title"><h4>Luxary</h4></div>
+												<ul>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Hotel<span class="fea_pkg">3 star</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Single Occupancy<span class="fea_pkg">2</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Twin Sharing<span class="fea_pkg">2</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Triple Sharing<span class="fea_pkg">4</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child with bed<span class="fea_pkg">5</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Child without bed<span class="fea_pkg">6</span></li>
+													<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Infant<span class="fea_pkg">0</span></li>
+													
+												</ul>
+											</div>
+									</div>
+								</div>
+							</div>
+							<!--end of tab6 --> 
+						</div>
+						<!-- End tabs -->
+					</div>
+					<!-- End Col -->
+
+					<aside class="col-md-4 left-pkgdtl">
+						<div class="box_style_1">
+							<div class="pkg-name">Routeburn Track</div>
+							<div class="price">
+								<strong>
+									<span class="cur_icons">
+										<i class="fa fa-inr"></i>
+									</span>3500</strong>
+								<small>per person</small>
+							</div>
+							<ul class="list_ok">
+								<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Sea te propriae lobortis</li>
+								<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>Aperiri electram</li>
+								<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>12 Quando omnium</li>
+								<li><span class="in_icons"><i class="fa fa-angle-right"></i></span>4 Vide urbanitas</li>
+							</ul>
+							<small>*Free for childs under 8 years old</small>
+						</div>
+						<div class="box_style_2">
+							<div class="pkg-name">Book Your Tour</div>
+							<div id="message-booking"></div>
+							<form method="post" action="assets/check_avail.php" id="check_avail" autocomplete="off">
+								<input type="hidden" id="tour_name" name="tour_name" value="General Louvre Tour">
+								<div class="form-group">
+									<label>Name</label>
+									<input type="text" class="form-control" id="name_booking" name="name_booking" placeholder="Name">
+								</div>
+								<div class="form-group">
+									<label>Lastname</label>
+									<input type="text" class="form-control" id="lastname_booking" name="lastname_booking" placeholder="Name and Lastname">
+								</div>
+								<div class="form-group">
+									<label>Email</label>
+									<input type="email" class="form-control" id="email_booking" name="email_booking" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label>Telephone</label>
+									<input type="text" class="form-control" id="telephone_booking" name="telephone_booking" placeholder="Telephone">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-xs-6 cal_pos">
+											<label>Departure Date</label>
+											<input type="text" class="form-control" id="telephone_booking" name="telephone_booking" placeholder="dd/mm/yy">
+											<span class="calander_icons"><i class="fa fa-calendar"></i></span>
+										</div>
+										<div class="col-xs-6 cal_pos">
+												<label>Arrival Date</label>
+												<input type="text" class="form-control" id="telephone_booking" name="telephone_booking" placeholder="dd/mm/yy">
+												<span class="calander_icons"><i class="fa fa-calendar"></i></span>
+										</div>
+									</div>
+										
+								</div>
+									<div class="form-group">
+											<label>Hotel Category*</label>
+											<select name="ddlhotel" id="ddlhotel" class="form-control">
+													<option selected="selected" value="0">1*</option>
+													<option value="2*">2*</option>
+													<option value="3*">3*</option>
+													<option value="4*">4*</option>
+													<option value="others">others</option>
+											</select>
+										</div>
+										<div class="form-group">
+												<div class="row">
+													<div class="col-xs-6 cal_pos">
+														<label>Adult</label>
+														<select name="ddlAdult" id="ddlAdult" class="form-control padding_none">
+																<option selected="selected" value="0">Adult</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="5+">5+</option>
+															
+															</select>
+													</div>
+													<div class="col-xs-6 cal_pos">
+															<label>Child</label>
+														<select name="ddlAdult" id="ddlAdult" class="form-control padding_none">
+																<option selected="selected" value="0">Child</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3+</option>
+																
+															
+															</select>
+													</div>
+												</div>
+													
+											</div>
+										<div class="form-group">
+												<label>Budget</label>
+												<input name="TextBox1" type="text" id="TextBox1" class="form-control" placeholder="Budget*">
+											</div>
+
+								<div class="form-group">
+									<input type="submit" value="Book now" class="btn_full" id="submit-booking">
+								</div>
+
+							</form>
+							<hr>
+				
+							
+								
+
+						</div>
+					</aside>
+				</div>
+				<!-- End row -->
+			</div>
+			<!-- End container -->
+		</section>
+		<!-- end of details wrapper -->
+
+		<!-- start Footer Wrapper -->
+
+		<div class="footer-wrapper scrollspy-footer">
+
+			<footer class="main-footer">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-sm-12 col-md-4">
+
+							<h5 class="footer-title">newsletter</h5>
+
+							<p class="font16">Subsribe to get our latest updates and oeffers</p>
+
+							<div class="footer-newsletter">
+
+								<div class="form-group">
+									<input class="form-control" placeholder="enter your email " />
+									<button class="btn btn-primary">subsribe</button>
+								</div>
+
+								<p class="font-italic font13">*** Don't worry, we wont spam you!</p>
+
+							</div>
+
+						</div>
+
+						<div class="col-sm-12 col-md-8">
+
+							<div class="row">
+
+								<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-3 mt-25-sm">
+									<h5 class="footer-title">footer</h5>
+									<ul class="footer-menu">
+										<li>
+											<a href="index.html#">Support</a>
+										</li>
+										<li>
+											<a href="index.html#">Advertise</a>
+										</li>
+										<li>
+											<a href="index.html#">Media Relations</a>
+										</li>
+										<li>
+											<a href="index.html#">Affiliates</a>
+										</li>
+										<li>
+											<a href="index.html#">Careers</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="col-xs-12 col-sm-4 col-md-3 mt-25-sm">
+									<h5 class="footer-title">quick links</h5>
+									<ul class="footer-menu">
+										<li>
+											<a href="index.html#">Media Relations</a>
+										</li>
+										<li>
+											<a href="index.html#">Affiliates</a>
+										</li>
+										<li>
+											<a href="index.html#">Careers</a>
+										</li>
+										<li>
+											<a href="index.html#">Support</a>
+										</li>
+										<li>
+											<a href="index.html#">Advertise</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="col-xs-12 col-sm-4 col-md-3 mt-25-sm">
+
+									<h5 class="footer-title">helps</h5>
+									<ul class="footer-menu">
+										<li>
+											<a href="index.html#">Using a Tour</a>
+										</li>
+										<li>
+											<a href="index.html#">Submitting a Tour</a>
+										</li>
+										<li>
+											<a href="index.html#">Managing My Account</a>
+										</li>
+										<li>
+											<a href="index.html#">Merchant Help</a>
+										</li>
+										<li>
+											<a href="index.html#">White Label Website</a>
+										</li>
+									</ul>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</footer>
+
+			<footer class="bottom-footer">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-xs-12 col-sm-6 col-md-4">
+
+							<p class="copy-right">&#169; 2018 Maco Travel </p>
+
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4">
+
+							<ul class="bottom-footer-menu">
+								<li>
+									<a href="index.html#">Cookies</a>
+								</li>
+								<li>
+									<a href="index.html#">Policies</a>
+								</li>
+								<li>
+									<a href="index.html#">Terms</a>
+								</li>
+								<li>
+									<a href="index.html#">Blogs</a>
+								</li>
+							</ul>
+
+						</div>
+
+						<div class="col-xs-12 col-sm-12 col-md-4">
+							<ul class="bottom-footer-menu for-social">
+								<li>
+									<a href="index.html#">
+										<i class="icon-social-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="index.html#">
+										<i class="icon-social-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="index.html#">
+										<i class="icon-social-google" data-toggle="tooltip" data-placement="top" title="google plus"></i>
+									</a>
+								</li>
+								<li>
+									<a href="index.html#">
+										<i class="icon-social-instagram" data-toggle="tooltip" data-placement="top" title="instrgram"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</footer>
+
+		</div>
+
+		<!-- end Footer Wrapper -->
+
+	</div>
+
+	<!-- end Container Wrapper -->
+	<!-- Core JS -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/core-plugins.js"></script>
+	<script type="text/javascript" src="js/customs.js"></script>
+
+	<!-- Only in Home Page -->
+	<script type="text/javascript" src="js/jquery.flexdatalist.js"></script>
+	
+</body>
+
+</html>
